@@ -99,7 +99,7 @@ categories = [
     "ذكر مقيم"
 ]
 
-# Create input fields for each group
+# Create input fields with highlight box
 data = {}
 for group in groups:
     # Highlighted group heading
@@ -111,16 +111,20 @@ for group in groups:
     group_data = {}
     total = 0
     for cat in categories:
-        # Add highlighted label above the number input
+        # Highlight box for label + input
         st.markdown(
-            f'<span style="background-color: rgba(255,255,255,0.7); padding: 3px; border-radius: 3px;">{cat}</span>',
+            f"""
+            <div style="background-color: rgba(255,255,255,0.7); padding: 8px; border-radius: 6px; margin-bottom: 8px;">
+                <span style="font-weight: bold;">{cat}</span>
+            </div>
+            """,
             unsafe_allow_html=True
         )
+        # Place the number input right after the box
         val = st.number_input("", min_value=0.0, max_value=100.0, value=0.0, step=1.0, key=f"{group}_{cat}")
         group_data[cat] = val
         total += val
 
-    # Check if total is 100
     if total != 100:
         st.warning(f"The total percentage for the ({group}) group is ({total}). It must be equal to 100%.")
         
@@ -176,6 +180,7 @@ st.download_button(
     file_name="ecotype_distribution.png",
     mime="image/png"
 )
+
 
 
 
