@@ -30,6 +30,42 @@ def set_background(local_img_path):
     st.markdown(css, unsafe_allow_html=True)
 set_background("Background.jpg")
 
+def set_background(local_img_path):
+    with open(local_img_path, "rb") as f:
+        encoded = base64.b64encode(f.read()).decode()
+
+    css = f"""
+    <style>
+    /* Main app background */
+    .stApp {{
+        background-image: url("data:image/jpg;base64,{encoded}");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }}
+
+    /* Hide header and footer only, keep the three dots visible */
+    header {{
+        background: none;
+    }}
+    footer {{
+        visibility: hidden;
+    }}
+
+    /* Add semi-transparent highlight behind all Streamlit text elements */
+    .stMarkdown, .stText, .stNumberInput, .stSubheader {{
+        background-color: rgba(255, 255, 255, 0.7); /* white with 70% opacity */
+        padding: 8px;
+        border-radius: 5px;
+    }}
+
+    /* Optional: Add spacing for input fields */
+    .stNumberInput {{
+        margin-bottom: 10px;
+    }}
+    </style>
+    """
+    st.markdown(css, unsafe_allow_html=True)
 
 
 
@@ -148,6 +184,7 @@ st.download_button(
     file_name="ecotype_distribution.png",
     mime="image/png"
 )
+
 
 
 
