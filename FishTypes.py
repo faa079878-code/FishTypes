@@ -8,15 +8,23 @@ def set_background(local_img_path):
         encoded = base64.b64encode(f.read()).decode()
     css = f"""
     <style>
+    /* Main app background */
     .stApp {{
         background-image: url("data:image/jpg;base64,{encoded}");
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
     }}
+
+    /* Hide top menu, header, and footer */
+    #MainMenu {{visibility: hidden;}}
+    header {{background: none;}}
+    footer {{visibility: hidden;}}
     </style>
     """
     st.markdown(css, unsafe_allow_html=True)
+
+# Apply background
 set_background("Background.jpg")
 
 
@@ -98,6 +106,7 @@ labels_rtl = [get_display(arabic_reshaper.reshape(cat)) for cat in categories]
 ax.legend(bbox_to_anchor=(1.05, 1), loc='upper left', labels=labels_rtl)
 
 st.pyplot(fig)
+
 
 
 
