@@ -64,8 +64,15 @@ for i, cat in enumerate(categories):
 
 ax.set_ylabel("Percent")
 ax.set_ylim(0, 100)
-ax.legend(bbox_to_anchor=(1.05, 1), loc='upper left')
+import arabic_reshaper
+from bidi.algorithm import get_display
+
+# Prepare Arabic labels for the legend in RTL
+labels_rtl = [get_display(arabic_reshaper.reshape(cat)) for cat in categories]
+ax.legend(bbox_to_anchor=(1.05, 1), loc='upper left', labels=labels_rtl)
+
 st.pyplot(fig)
+
 
 
 
