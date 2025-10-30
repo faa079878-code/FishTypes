@@ -27,12 +27,7 @@ def set_background(local_img_path):
         visibility: hidden;
     }}
 
-    /* Add semi-transparent highlight behind all Streamlit text elements */
-    .stMarkdown, .stText, .stNumberInput, .stSubheader {{
-        background-color: rgba(255, 255, 255, 0.7); /* white with 70% opacity */
-        padding: 8px;
-        border-radius: 5px;
-    }}
+ 
 
     /* Optional: Add spacing for input fields */
     .stNumberInput {{
@@ -51,7 +46,7 @@ set_background("Background.jpg")
 
 
 st.markdown(
-    '<h1 style="text-align: center;"><span style="background-color: rgba(255,255,255,0.7); padding: 4px; border-radius: 4px;">مخطط توزيع الأنماط البيئية للأسماك</span></h1>',
+    '<h1 style="text-align: center;">مخطط توزيع الأنماط البيئية للأسماك</h1>',
     unsafe_allow_html=True
 )
 
@@ -162,6 +157,7 @@ st.download_button(
     file_name="ecotype_distribution.png",
     mime="image/png"
 )
+
 
 
 
