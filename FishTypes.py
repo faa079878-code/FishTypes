@@ -3,30 +3,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 
-import arabic_reshaper
-from bidi.algorithm import get_display
-
-fig, ax = plt.subplots(figsize=(6, 5))
-
-colors = ["lightgrey", "grey", "dimgray", "lightgrey", "grey", "dimgray"]
-hatches = [None, None, None, "//", "//", "//"]
-
-bottom = [0, 0, 0]
-for i, cat in enumerate(categories):
-    values = df.loc[cat]
-    ax.bar(groups, values, bottom=bottom, color=colors[i], hatch=hatches[i], edgecolor="black")
-    bottom = [sum(x) for x in zip(bottom, values)]
-
-ax.set_ylabel("Percent")
-ax.set_ylim(0, 100)
-
-# Fix Arabic labels in legend
-labels_rtl = [get_display(arabic_reshaper.reshape(cat)) for cat in categories]
-ax.legend(bbox_to_anchor=(1.05, 1), loc='upper left', labels=labels_rtl)
-
-st.pyplot(fig)
-
-
 # App title
 st.title("مخطط توزيع الأنماط البيئية للأسماك (Ecotype Distribution)")
 
@@ -90,6 +66,7 @@ ax.set_ylabel("Percent")
 ax.set_ylim(0, 100)
 ax.legend(bbox_to_anchor=(1.05, 1), loc='upper left')
 st.pyplot(fig)
+
 
 
 
