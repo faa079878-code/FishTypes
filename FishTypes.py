@@ -48,8 +48,8 @@ for group in groups:
             group_data[cat] = val
             total += val
 
-     if total != 100
-        st.warning(f"⚠️ مجموع النسب لمجموعة **{group}** هو {total}%. يُفضل أن يكون المجموع = 100%.")
+    if total != 100
+   st.warning(f"⚠️ مجموع النسب لمجموعة **{group}** هو {total}%. يُفضل أن يكون المجموع = 100%.")
     data[group] = group_data
 
 # --- Convert to DataFrame ---
