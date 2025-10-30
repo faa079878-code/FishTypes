@@ -48,8 +48,8 @@ for group in groups:
             group_data[cat] = val
             total += val
 
-    if total != 100:
-    data[group] = group_data
+if total != 100:
+data[group] = group_data
 
 # --- Convert to DataFrame ---
 df = pd.DataFrame(data)
