@@ -9,7 +9,7 @@ st.title("مخطط توزيع الأنماط البيئية للأسماك (Ecot
 # Arabic Text (Right-Aligned)
 st.markdown("""
 <p style="text-align: right;">
-    .أدخل النسب المئوية لكل فئة من الأسماك ضمن المجموعات الثلاث: اليافعة، المهاجرة، والمقيمة
+    .أدخل النسب المئوية لكل فئة من الأسماك ضمن المجموعات الثلاث: اليافعة، المهاجرة والمقيمة
 </p>
 """, unsafe_allow_html=True)
 
@@ -80,6 +80,7 @@ labels_rtl = [get_display(arabic_reshaper.reshape(cat)) for cat in categories]
 ax.legend(bbox_to_anchor=(1.05, 1), loc='upper left', labels=labels_rtl)
 
 st.pyplot(fig)
+
 
 
 
