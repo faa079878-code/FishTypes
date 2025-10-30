@@ -14,12 +14,12 @@ st.markdown("""
 # Define groups and fish categories
 groups = ["Juvenile", "Migratory", "Resident"]
 categories = [
-    "أنثى مهاجرة (Light Grey)",
-    "أنثى خليط الجينات (Grey)",
-    "أنثى قاطنة (Dark Grey)",
-    "ذكر مهاجر (Light Dashed Grey)",
-    "ذكر خليط الجينات (Dashed Grey)",
-    "ذكر قاطن (Dark Dashed Grey)"
+    "أنثى مهاجرة",
+    "أنثى خليط الجينات",
+    "أنثى قاطنة",
+    "ذكر مهاجر",
+    "ذكر خليط الجينات",
+    "ذكر قاطن"
 ]
 
 # Create input fields for each group
@@ -72,6 +72,7 @@ labels_rtl = [get_display(arabic_reshaper.reshape(cat)) for cat in categories]
 ax.legend(bbox_to_anchor=(1.05, 1), loc='upper left', labels=labels_rtl)
 
 st.pyplot(fig)
+
 
 
 
