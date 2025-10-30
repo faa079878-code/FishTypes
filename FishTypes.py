@@ -88,8 +88,9 @@ st.markdown(
 
 
 
-# Define groups and fish categories
-groups = ["Juvenile", "Migratory", "Resident"]
+import streamlit as st
+
+# Example single group
 categories = [
     "أنثى مهاجرة",
     "أنثى خليط الجينات",
@@ -99,36 +100,25 @@ categories = [
     "ذكر مقيم"
 ]
 
-# Create input fields with highlight box
-data = {}
-for group in groups:
-    # Highlighted group heading
+for cat in categories:
+    # Create a box container
     st.markdown(
-        f'<h3 style="text-align: left;"><span style="background-color: rgba(255,255,255,0.7); padding: 4px; border-radius: 4px;">{group} Group</span></h3>',
+        f"""
+        <div style="
+            background-color: rgba(255,255,255,0.8); 
+            padding: 10px; 
+            border-radius: 8px; 
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;">
+            <span style="font-weight: bold;">{cat}</span>
+        </div>
+        """,
         unsafe_allow_html=True
     )
-
-    group_data = {}
-    total = 0
-    for cat in categories:
-        # Highlight box for label + input
-        st.markdown(
-            f"""
-            <div style="background-color: rgba(255,255,255,0.7); padding: 8px; border-radius: 6px; margin-bottom: 8px;">
-                <span style="font-weight: bold;">{cat}</span>
-            </div>
-            """,
-            unsafe_allow_html=True
-        )
-        # Place the number input right after the box
-        val = st.number_input("", min_value=0.0, max_value=100.0, value=0.0, step=1.0, key=f"{group}_{cat}")
-        group_data[cat] = val
-        total += val
-
-    if total != 100:
-        st.warning(f"The total percentage for the ({group}) group is ({total}). It must be equal to 100%.")
-        
-    data[group] = group_data
+    # Place the number input inside the same box visually
+    val = st.number_input("", min_value=0.0, max_value=100.0, value=0.0, step=1.0, key=cat)
 
 
 # Convert to DataFrame
@@ -180,6 +170,7 @@ st.download_button(
     file_name="ecotype_distribution.png",
     mime="image/png"
 )
+
 
 
 
