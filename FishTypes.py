@@ -2,6 +2,21 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import base64
+import io
+
+# Save the figure to a BytesIO buffer
+buf = io.BytesIO()
+fig.savefig(buf, format="png", dpi=300, bbox_inches="tight")
+buf.seek(0)  # Move to the beginning of the buffer
+
+# Download button
+st.download_button(
+    label="Download Graph as PNG",
+    data=buf,
+    file_name="ecotype_distribution.png",
+    mime="image/png"
+)
+
 
 def set_background(local_img_path):
     with open(local_img_path, "rb") as f:
@@ -125,6 +140,7 @@ labels_rtl = [get_display(arabic_reshaper.reshape(cat)) for cat in categories]
 ax.legend(bbox_to_anchor=(1.05, 1), loc='upper left', labels=labels_rtl)
 
 st.pyplot(fig)
+
 
 
 
