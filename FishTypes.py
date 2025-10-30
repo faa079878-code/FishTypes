@@ -64,7 +64,8 @@ for i, cat in enumerate(categories):
 
 ax.set_ylim(0, 100)
 ax.set_ylabel("Percent", fontsize=14, fontweight='bold')
-ax.set_xlabel("Ecotype", fontsize=14, fontweight='bold')
+ax.set_xlabel("Ecotype", fontsize=14, fontweight='bold', labelpad=15)
+
 import arabic_reshaper
 from bidi.algorithm import get_display
 
@@ -73,6 +74,7 @@ labels_rtl = [get_display(arabic_reshaper.reshape(cat)) for cat in categories]
 ax.legend(bbox_to_anchor=(1.05, 1), loc='upper left', labels=labels_rtl)
 
 st.pyplot(fig)
+
 
 
 
