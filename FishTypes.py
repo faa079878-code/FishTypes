@@ -46,11 +46,16 @@ st.markdown(
 st.markdown("<br>", unsafe_allow_html=True)
 
 # Arabic instruction
-st.markdown("""
-<p style="text-align: right;">
-    :أدخل النسب المئوية لكل فئة من الأسماك ضمن المجموعات الثلاث  
-</p>
-""", unsafe_allow_html=True)
+st.markdown(
+    """
+    <p style="text-align: right;">
+        :أدخل النسب المئوية لكل فئة من الأسماك ضمن المجموعات الثلاث  
+    </p>
+    """,
+    unsafe_allow_html=True
+)
+
+
 
 # English instruction
 st.markdown("<br>", unsafe_allow_html=True)
@@ -134,6 +139,7 @@ st.download_button(
     file_name="ecotype_distribution.png",
     mime="image/png"
 )
+
 
 
 
