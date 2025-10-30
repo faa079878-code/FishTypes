@@ -51,9 +51,10 @@ set_background("Background.jpg")
 
 
 st.markdown(
-    '<h1 style="text-align: center;">مخطط توزيع الأنماط البيئية للأسماك</h1>',
+    '<h1 style="text-align: center;"><span style="background-color: rgba(255,255,255,0.7); padding: 4px; border-radius: 4px;">مخطط توزيع الأنماط البيئية للأسماك</span></h1>',
     unsafe_allow_html=True
 )
+
 st.markdown(
     '<h1 style="text-align: center;">Ecotype Distribution</h1>',
     unsafe_allow_html=True
@@ -161,6 +162,7 @@ st.download_button(
     file_name="ecotype_distribution.png",
     mime="image/png"
 )
+
 
 
 
