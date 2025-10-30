@@ -47,8 +47,8 @@ for group in groups:
             val = st.number_input(f"{cat} - {group}", min_value=0.0, max_value=100.0, value=0.0, step=1.0)
             group_data[cat] = val
             total += val
-
- def check_distribution(group, percentages):
+            
+def check_distribution(group, percentages):
     total = sum(percentages)
     if total != 100:
         st.warning(f"⚠️ مجموع النسب لمجموعة **{group}** هو {total}%. يُفضل أن يكون المجموع = 100%.")
