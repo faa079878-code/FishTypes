@@ -16,7 +16,7 @@ st.markdown("""
 في ثلاث مجموعات بيئية رئيسية:
 - **اليافعة (Juvenile)**  
 - **المهاجرة (Migratory)**  
-- **القاطنة (Resident)**  
+- **المقيمة (Resident)**  
 
 وسيتم رسم مخطط بياني مكدس يعرض توزيع الأنواع داخل كل مجموعة.
 """)
@@ -26,10 +26,10 @@ groups = ["Juvenile", "Migratory", "Resident"]
 categories = [
     "أنثى مهاجرة (Light Grey)",
     "أنثى خليط الجينات (Grey)",
-    "أنثى قاطنة (Dark Grey)",
+    "أنثى مقيمة (Dark Grey)",
     "ذكر مهاجر (Light Dashed Grey)",
     "ذكر خليط الجينات (Dashed Grey)",
-    "ذكر قاطن (Dark Dashed Grey)"
+    "ذكر مقيم (Dark Dashed Grey)"
 ]
 
 # --- Create Input Fields ---
@@ -49,7 +49,6 @@ for group in groups:
             total += val
 
     if total != 100:
-        st.warning(f"⚠️ مجموع النسب لمجموعة **{group}** هو {total}%. يُفضل أن يكون المجموع = 100%.")
     data[group] = group_data
 
 # --- Convert to DataFrame ---
