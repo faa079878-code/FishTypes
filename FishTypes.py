@@ -46,14 +46,20 @@ st.markdown(
 
 
 # Arabic Text (Right-Aligned)
+# Add space before instructions
+st.markdown("<br>", unsafe_allow_html=True)
+
+# Arabic instruction
 st.markdown("""
 <p style="text-align: right;">
     :أدخل النسب المئوية لكل فئة من الأسماك ضمن المجموعات الثلاث  
 </p>
 """, unsafe_allow_html=True)
 
-# English Translation (Default Left-Aligned)
+# English instruction
+st.markdown("<br>", unsafe_allow_html=True)
 st.markdown("Enter the percentages for each fish category within the three groups:")
+
 
 # Define groups and fish categories
 groups = ["Juvenile", "Migratory", "Resident"]
@@ -119,6 +125,7 @@ labels_rtl = [get_display(arabic_reshaper.reshape(cat)) for cat in categories]
 ax.legend(bbox_to_anchor=(1.05, 1), loc='upper left', labels=labels_rtl)
 
 st.pyplot(fig)
+
 
 
 
