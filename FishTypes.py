@@ -8,7 +8,7 @@ st.title("مخطط توزيع الأنماط البيئية للأسماك (Ecot
 
 st.markdown("""
 أدخل النسب المئوية لكل فئة من الأسماك ضمن المجموعات الثلاث:
-**اليافعة (Juvenile)**، **المهاجرة (Migratory)**، و**القاطنة (Resident)**.
+**اليافعة (Juvenile)**، **المهاجرة (Migratory)**، و**المقيمة (Resident)**.
 """)
 
 # Define groups and fish categories
@@ -35,7 +35,8 @@ for group in groups:
 
     # Check if total is 100
     if total != 100:
-        st.warning(f"⚠️ مجموع النسب لمجموعة {group} هو {total}%. يجب أن يساوي 100%.")
+        st.warning(f".100% المجموع الصحيح يجب أن يكون .{total} هو {group} تنبيه: مجموع نسب مجموعة")
+        
     data[group] = group_data
 
 # Convert to DataFrame
@@ -74,6 +75,7 @@ labels_rtl = [get_display(arabic_reshaper.reshape(cat)) for cat in categories]
 ax.legend(bbox_to_anchor=(1.05, 1), loc='upper left', labels=labels_rtl)
 
 st.pyplot(fig)
+
 
 
 
