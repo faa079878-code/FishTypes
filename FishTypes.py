@@ -69,7 +69,9 @@ st.markdown("<br>", unsafe_allow_html=True)
 st.markdown(
     """
     <p style="text-align: right;">
-        :أدخل النسب المئوية لكل فئة من الأسماك ضمن المجموعات الثلاث  
+        <span style="background-color: rgba(255,255,255,0.7); padding: 3px; border-radius: 3px;">
+        :أدخل النسب المئوية لكل فئة من الأسماك ضمن المجموعات الثلاث
+        </span>
     </p>
     """,
     unsafe_allow_html=True
@@ -77,9 +79,13 @@ st.markdown(
 
 
 
+
 # English instruction
-st.markdown("<br>", unsafe_allow_html=True)
-st.markdown("Enter the percentages for each fish category within the three groups:")
+st.markdown(
+    '<p><span style="background-color: rgba(255,255,255,0.7); padding: 3px; border-radius: 3px;">Enter the percentages for each fish category within the three groups:</span></p>',
+    unsafe_allow_html=True
+)
+
 
 
 # Define groups and fish categories
@@ -159,6 +165,7 @@ st.download_button(
     file_name="ecotype_distribution.png",
     mime="image/png"
 )
+
 
 
 
