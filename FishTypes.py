@@ -102,11 +102,21 @@ categories = [
 # Create input fields for each group
 data = {}
 for group in groups:
-    st.subheader(f"{group} Group")
+    # Highlighted group heading
+    st.markdown(
+        f'<h3 style="text-align: left;"><span style="background-color: rgba(255,255,255,0.7); padding: 4px; border-radius: 4px;">{group} Group</span></h3>',
+        unsafe_allow_html=True
+    )
+
     group_data = {}
     total = 0
     for cat in categories:
-        val = st.number_input(f"{cat} - {group}", min_value=0.0, max_value=100.0, value=0.0, step=1.0)
+        # Add highlighted label above the number input
+        st.markdown(
+            f'<span style="background-color: rgba(255,255,255,0.7); padding: 3px; border-radius: 3px;">{cat}</span>',
+            unsafe_allow_html=True
+        )
+        val = st.number_input("", min_value=0.0, max_value=100.0, value=0.0, step=1.0, key=f"{group}_{cat}")
         group_data[cat] = val
         total += val
 
@@ -115,6 +125,7 @@ for group in groups:
         st.warning(f"The total percentage for the ({group}) group is ({total}). It must be equal to 100%.")
         
     data[group] = group_data
+
 
 # Convert to DataFrame
 df = pd.DataFrame(data)
@@ -165,6 +176,7 @@ st.download_button(
     file_name="ecotype_distribution.png",
     mime="image/png"
 )
+
 
 
 
