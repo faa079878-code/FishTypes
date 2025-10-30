@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
-pip install arabic-reshaper python-bidi
+
 
 import arabic_reshaper
 from bidi.algorithm import get_display
@@ -90,6 +90,7 @@ ax.set_ylabel("Percent")
 ax.set_ylim(0, 100)
 ax.legend(bbox_to_anchor=(1.05, 1), loc='upper left')
 st.pyplot(fig)
+
 
 
 
