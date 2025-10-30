@@ -32,9 +32,10 @@ set_background("Background.jpg")
 # App title
 st.title("Ecotype Distribution")
 st.markdown(
-    '<h1 style="text-align: right; padding-right: 20px;">مخطط توزيع الأنماط البيئية للأسماك</h1>',
+    '<h1 style="text-align: center;">مخطط توزيع الأنماط البيئية للأسماك</h1>',
     unsafe_allow_html=True
 )
+
 
 
 
@@ -113,6 +114,7 @@ labels_rtl = [get_display(arabic_reshaper.reshape(cat)) for cat in categories]
 ax.legend(bbox_to_anchor=(1.05, 1), loc='upper left', labels=labels_rtl)
 
 st.pyplot(fig)
+
 
 
 
