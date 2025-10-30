@@ -1,18 +1,23 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
+import base64
 
-page_bg_img = """
-<style>
-.stApp {
-background-image: url("Background.jpg");  /* local file name */
-background-size: cover;
-background-position: center;
-background-repeat: no-repeat;
-}
-</style>
-"""
-st.markdown(page_bg_img, unsafe_allow_html=True)
+def set_background(local_img_path):
+    with open(local_img_path, "rb") as f:
+        encoded = base64.b64encode(f.read()).decode()
+    css = f"""
+    <style>
+    .stApp {{
+        background-image: url("data:image/jpg;base64,{encoded}");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }}
+    </style>
+    """
+    st.markdown(css, unsafe_allow_html=True)
+set_background("Background.jpg")
 
 
 
@@ -93,6 +98,7 @@ labels_rtl = [get_display(arabic_reshaper.reshape(cat)) for cat in categories]
 ax.legend(bbox_to_anchor=(1.05, 1), loc='upper left', labels=labels_rtl)
 
 st.pyplot(fig)
+
 
 
 
