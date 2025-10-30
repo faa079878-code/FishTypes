@@ -18,13 +18,7 @@ def set_background(local_img_path):
         background-repeat: no-repeat;
     }}
 
-    /* Hide top menu, header, and footer */
-    #MainMenu {{visibility: hidden;}}
-    header {{background: none;}}
-    footer {{visibility: hidden;}}
-    </style>
-    """
-    st.markdown(css, unsafe_allow_html=True)
+   
 
 # Apply background
 set_background("Background.jpg")
@@ -140,6 +134,7 @@ st.download_button(
     file_name="ecotype_distribution.png",
     mime="image/png"
 )
+
 
 
 
