@@ -12,7 +12,7 @@ st.markdown("""
 """)
 
 # Define groups and fish categories
-groups = ["Juvenile", "Migratory", "Resident"]
+groups = ["Juvenile يافعة", "Migratory مهاجرة", "Resident مقيمة"]
 categories = [
     "أنثى مهاجرة",
     "أنثى خليط الجينات",
@@ -75,6 +75,7 @@ labels_rtl = [get_display(arabic_reshaper.reshape(cat)) for cat in categories]
 ax.legend(bbox_to_anchor=(1.05, 1), loc='upper left', labels=labels_rtl)
 
 st.pyplot(fig)
+
 
 
 
