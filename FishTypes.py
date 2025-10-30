@@ -2,32 +2,6 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 
-# --- START: New lines for Arabic fix ---
-import arabic_reshaper
-from bidi.algorithm import get_display
-import matplotlib.font_manager as fm # For explicit font handling
-
-# NOTE: For this to work on Streamlit Cloud, you MUST include a suitable 
-# Arabic font file (e.g., 'Amiri-Regular.ttf') in your repository.
-# You can use a common font like 'Arial.ttf' if you're sure it's available.
-# We'll use a placeholder name 'Amiri-Regular.ttf' here.
-font_path = 'Amiri-Regular.ttf' 
-try:
-    font_prop = fm.FontProperties(fname=font_path)
-    # Set the global font to the loaded font's name
-    plt.rcParams['font.family'] = font_prop.get_name()
-    plt.rcParams['text.usetex'] = False 
-except Exception as e:
-    st.error(f"Could not load custom font: {e}. Falling back to default.")
-    # Fallback if the font file is missing
-    plt.rcParams['font.family'] = 'sans-serif' 
-    font_prop = {'family': 'sans-serif'} # Define a fallback for later use
-# --- END: New lines for Arabic fix ---
-
-# 1. Import the necessary libraries for Arabic text
-import arabic_reshaper
-from bidi.algorithm import get_display
-
 # App title
 st.title("مخطط توزيع الأنماط البيئية للأسماك (Ecotype Distribution)")
 
@@ -91,5 +65,6 @@ ax.set_ylabel("Percent")
 ax.set_ylim(0, 100)
 ax.legend(bbox_to_anchor=(1.05, 1), loc='upper left')
 st.pyplot(fig)
+
 
 
