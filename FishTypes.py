@@ -42,7 +42,7 @@ def set_background(local_img_path):
     """
     st.markdown(css, unsafe_allow_html=True)
 
-
+set_background("Background.jpg")
 
 
 
@@ -161,6 +161,7 @@ st.download_button(
     file_name="ecotype_distribution.png",
     mime="image/png"
 )
+
 
 
 
