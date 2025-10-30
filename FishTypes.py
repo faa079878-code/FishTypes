@@ -35,7 +35,7 @@ for group in groups:
 
     # Check if total is 100
     if total != 100:
-        st.warning(f"The total percentage for the ({group}) group is ({total}). It must equal 100%.")
+        st.warning(f"The total percentage for the ({group}) group is ({total}). It must be equal to 100%.")
         
     data[group] = group_data
 
@@ -75,6 +75,7 @@ labels_rtl = [get_display(arabic_reshaper.reshape(cat)) for cat in categories]
 ax.legend(bbox_to_anchor=(1.05, 1), loc='upper left', labels=labels_rtl)
 
 st.pyplot(fig)
+
 
 
 
