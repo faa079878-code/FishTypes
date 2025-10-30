@@ -6,7 +6,11 @@ import matplotlib.pyplot as plt
 # App title
 st.title("مخطط توزيع الأنماط البيئية للأسماك (Ecotype Distribution)")
 
-st.markdown("""أدخل النسب المئوية لكل فئة من الأسماك ضمن المجموعات الثلاث""")
+st.markdown("""
+<div style="text-align: right;">
+    أدخل النسب المئوية لكل فئة من الأسماك ضمن المجموعات الثلاث
+</div>
+""", unsafe_allow_html=True) # **Crucial for HTML rendering**
 
 # Define groups and fish categories
 groups = ["Juvenile", "Migratory", "Resident"]
@@ -72,6 +76,7 @@ labels_rtl = [get_display(arabic_reshaper.reshape(cat)) for cat in categories]
 ax.legend(bbox_to_anchor=(1.05, 1), loc='upper left', labels=labels_rtl)
 
 st.pyplot(fig)
+
 
 
 
