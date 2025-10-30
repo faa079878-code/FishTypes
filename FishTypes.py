@@ -2,6 +2,18 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 
+page_bg_img = """
+<style>
+.stApp {
+background-image: url("https://www.shutterstock.com/image-vector/ocean-underwater-background-fishes-sea-260nw-1470211547.jpg");
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+}
+</style>
+"""
+st.markdown(page_bg_img, unsafe_allow_html=True)
+
 
 # App title
 st.title("مخطط توزيع الأنماط البيئية للأسماك (Ecotype Distribution)")
@@ -80,6 +92,7 @@ labels_rtl = [get_display(arabic_reshaper.reshape(cat)) for cat in categories]
 ax.legend(bbox_to_anchor=(1.05, 1), loc='upper left', labels=labels_rtl)
 
 st.pyplot(fig)
+
 
 
 
