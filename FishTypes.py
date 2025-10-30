@@ -8,7 +8,7 @@ st.title("مخطط توزيع الأنماط البيئية للأسماك (Ecot
 
 st.markdown("""
 <div style="text-align: right;">
-    أدخل النسب المئوية لكل فئة من الأسماك ضمن المجموعات الثلاث
+    :أدخل النسب المئوية لكل فئة من الأسماك ضمن المجموعات الثلاث
 </div>
 """, unsafe_allow_html=True) # **Crucial for HTML rendering**
 
@@ -76,6 +76,7 @@ labels_rtl = [get_display(arabic_reshaper.reshape(cat)) for cat in categories]
 ax.legend(bbox_to_anchor=(1.05, 1), loc='upper left', labels=labels_rtl)
 
 st.pyplot(fig)
+
 
 
 
