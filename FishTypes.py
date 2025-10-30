@@ -30,7 +30,7 @@ set_background("Background.jpg")
 
 
 # App title
-st.title("مخطط توزيع الأنماط البيئية للأسماك (Ecotype Distribution)")
+st.title("مخطط توزيع الأنماط البيئية للأسماك     (Ecotype Distribution)")
 
 # Arabic Text (Right-Aligned)
 st.markdown("""
