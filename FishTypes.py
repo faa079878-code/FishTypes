@@ -12,7 +12,7 @@ st.markdown("""
 """)
 
 # Define groups and fish categories
-groups = ["Juvenile يافعة", "Migratory مهاجرة", "Resident مقيمة"]
+groups = ["Juvenile", "Migratory", "Resident"]
 categories = [
     "أنثى مهاجرة",
     "أنثى خليط الجينات",
