@@ -2,6 +2,17 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 
+page_bg_img = """
+<style>
+.stApp {
+background-image: url("Background.jpg");  /* local file name */
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+}
+</style>
+"""
+st.markdown(page_bg_img, unsafe_allow_html=True)
 
 
 
@@ -82,6 +93,7 @@ labels_rtl = [get_display(arabic_reshaper.reshape(cat)) for cat in categories]
 ax.legend(bbox_to_anchor=(1.05, 1), loc='upper left', labels=labels_rtl)
 
 st.pyplot(fig)
+
 
 
 
