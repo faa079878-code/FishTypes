@@ -30,7 +30,8 @@ set_background("Background.jpg")
 
 
 # App title
-st.title("مخطط توزيع الأنماط البيئية للأسماك     (Ecotype Distribution)")
+st.title("مخطط توزيع الأنماط البيئية للأسماك (Ecotype Distribution)")
+st.title("مخطط توزيع الأنماط البيئية للأسماك (Ecotype Distribution)")
 
 # Arabic Text (Right-Aligned)
 st.markdown("""
@@ -106,6 +107,7 @@ labels_rtl = [get_display(arabic_reshaper.reshape(cat)) for cat in categories]
 ax.legend(bbox_to_anchor=(1.05, 1), loc='upper left', labels=labels_rtl)
 
 st.pyplot(fig)
+
 
 
 
