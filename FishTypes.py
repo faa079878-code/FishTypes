@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 page_bg_img = """
 <style>
 .stApp {
-background-image: url("https://media.istockphoto.com/id/1338749711/photo/wild-salmon-underwater-migration.jpg?s=612x612&w=0&k=20&c=lJxhcbSlOlljs_frENVVIk6JDdlbYKUWXJD-WiYdmoI=");
+background-image: url("https://i.pinimg.com/736x/a9/f9/95/a9f995598a07eb1c5c773316da48ec31.jpg");
 background-size: cover;
 background-position: center;
 background-repeat: no-repeat;
@@ -92,6 +92,7 @@ labels_rtl = [get_display(arabic_reshaper.reshape(cat)) for cat in categories]
 ax.legend(bbox_to_anchor=(1.05, 1), loc='upper left', labels=labels_rtl)
 
 st.pyplot(fig)
+
 
 
 
