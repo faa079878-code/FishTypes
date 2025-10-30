@@ -63,6 +63,7 @@ for i, cat in enumerate(categories):
     bottom = [sum(x) for x in zip(bottom, values)]
 
 ax.set_ylabel("Percent")
+ax.set_xlabel("Ecotyope")
 ax.set_ylim(0, 100)
 import arabic_reshaper
 from bidi.algorithm import get_display
@@ -72,6 +73,7 @@ labels_rtl = [get_display(arabic_reshaper.reshape(cat)) for cat in categories]
 ax.legend(bbox_to_anchor=(1.05, 1), loc='upper left', labels=labels_rtl)
 
 st.pyplot(fig)
+
 
 
 
