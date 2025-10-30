@@ -16,10 +16,10 @@ groups = ["Juvenile", "Migratory", "Resident"]
 categories = [
     "أنثى مهاجرة",
     "أنثى خليط الجينات",
-    "أنثى قاطنة",
+    "أنثى مقيمة",
     "ذكر مهاجر",
     "ذكر خليط الجينات",
-    "ذكر قاطن"
+    "ذكر مقيم"
 ]
 
 # Create input fields for each group
@@ -75,6 +75,7 @@ labels_rtl = [get_display(arabic_reshaper.reshape(cat)) for cat in categories]
 ax.legend(bbox_to_anchor=(1.05, 1), loc='upper left', labels=labels_rtl)
 
 st.pyplot(fig)
+
 
 
 
